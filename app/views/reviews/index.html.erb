@@ -1,0 +1,19 @@
+<header id="content-header">
+  <h1>Reviews for <%= link_to(@story.title, @story) %></h1>
+</header>
+<ol id="reviews">
+  <% @reviews.each do |review| %>
+    <li>
+      <span class="user">by <%= review.user.name %>: </span>
+      <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
+      <p>
+        &quot;<%= review.comment %>&quot;
+      </p>
+      <nav>
+        <%= link_to "Edit", edit_story_review_path(@story, review) %>
+        <%= link_to "Delete", story_review_path(@story, review), method: :delete, data: { confirm: 'Are you sure?' } %>
+      </nav>
+    </li>
+  <% end %>
+</ol>
+

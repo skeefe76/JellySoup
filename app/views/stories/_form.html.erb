@@ -1,0 +1,20 @@
+<%= form_for(@story) do |f| %>
+  <%= render "shared/errors", object: @story %>
+  <%= @story.errors.full_messages.to_sentence %>
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :manuscript %><br/>
+    <%= f.text_area :manuscript, cols: 40, rows: 7 %>
+  </p>
+  <p>
+    <%= f.label :version_date %><br/>
+    <%= f.date_field :version_date %>
+  </p>
+  <p>
+    <%= f.submit %> |
+    <%= link_to "Cancel", stories_path %>
+  </p>
+<% end %>

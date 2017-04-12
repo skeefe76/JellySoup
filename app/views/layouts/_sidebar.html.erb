@@ -1,0 +1,14 @@
+<aside id="sidebar">
+  <nav>
+    <ul>
+      <% if current_user_admin? %>
+        <li class="stories">
+          <%= link_to 'All Stories', stories_path, class: "button" %>
+        </li>
+        <li class="create-story">
+          <%= link_to 'Add Story', new_story_path, class: "button" %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</aside>

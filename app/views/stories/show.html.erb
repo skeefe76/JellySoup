@@ -1,0 +1,30 @@
+
+  <article>
+    <header>
+      <h2><%= @story.title %></h2>
+    </header>
+    <p>
+      <%= @story.manuscript %>
+    </p>
+    <table>
+      <tr>
+        <th>Author:</th>
+        <td><%= @story.author %></td>
+      </tr>
+      <tr>
+        <th>Version Date:</th>
+        <td><%= @story.version_date %></td>
+      </tr>
+    </table>
+  </article>
+  <p>
+  <nav>
+    <% if current_user_admin? %>
+      <%= link_to "Write Review", new_story_review_path(@story),
+               class: 'button ok review' %>
+      <%= link_to "Reviews", story_reviews_path(@story) %>
+      <%= link_to "Edit", edit_story_path(@story) %>
+      <%= link_to "Delete", story_path(@story), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </nav>
+  </p>
