@@ -21,7 +21,7 @@
   <nav>
       <%= link_to "Write Review", new_story_review_path(@story),
                class: 'button ok review' %>
-      <%= link_to "Reviews", story_reviews_path(@story) %>
+      <%= link_to pluralize(@story.reviews.count,'Review'), story_reviews_path(@story) %>
     <% if current_user == @story.user %>
       <%= link_to "Edit", edit_story_path(@story) %>
       <%= link_to "Delete", story_path(@story), method: :delete, data: { confirm: 'Are you sure?' } %>
