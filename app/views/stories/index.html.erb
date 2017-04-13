@@ -4,7 +4,7 @@
   <% @stories.each do |story|%>
   <article>
     <header>
-      <h2><%= link_to story.title, story %></h2>
+      <h2><%= link_to(story.title, story) %></h2>
     </header>
     <p>
       <%= truncate(story.manuscript, length: 100, separator: ' ') %>
@@ -12,7 +12,7 @@
     <table>
       <tr>
         <th>Author:</th>
-        <td><%= story.author %></td>
+        <td><%= story.user.name %></td>
       </tr>
       <tr>
         <th>Version Date:</th>

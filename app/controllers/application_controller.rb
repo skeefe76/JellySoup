@@ -34,4 +34,10 @@ private
 
   helper_method :current_user_admin?
 
+  before_filter :set_current_user
+
+  def set_current_user
+    Story.current_user = current_user
+  end
+
 end

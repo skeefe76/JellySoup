@@ -3,11 +3,11 @@
   <%= @story.errors.full_messages.to_sentence %>
   <p>
     <%= f.label :title %><br/>
-    <%= f.text_field :title, autofocus: true %>
+    <%= f.text_field :title, autofocus: true, size: 40 %>
   </p>
   <p>
     <%= f.label :manuscript %><br/>
-    <%= f.text_area :manuscript, cols: 40, rows: 7 %>
+    <%= f.text_area :manuscript, cols: 110, rows: 15 %>
   </p>
   <p>
     <%= f.label :version_date %><br/>
@@ -17,4 +17,5 @@
     <%= f.submit %> |
     <%= link_to "Cancel", stories_path %>
   </p>
+  <div class="g-recaptcha" data-sitekey="6Lfs8xwUAAAAALz6B9h1dnk7tlXeG6VfbaU8ObHH"></div>
 <% end %>

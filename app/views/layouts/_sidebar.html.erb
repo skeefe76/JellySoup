@@ -5,10 +5,13 @@
         <li class="stories">
           <%= link_to 'All Stories', stories_path, class: "button" %>
         </li>
-        <li class="create-story">
-          <%= link_to 'Add Story', new_story_path, class: "button" %>
-        </li>
       <% end %>
+      <li class="stories">
+        <%= link_to 'My Stories', filtered_stories_path(:mystories), class: 'button' %>
+      </li>
+      <li class="create-story">
+        <%= link_to 'Add Story', new_story_path, class: "button" %>
+      </li>
     </ul>
   </nav>
 </aside>

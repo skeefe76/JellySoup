@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
+# Allow environment variables to be more easily managed
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
@@ -49,6 +52,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Uses PostGREs for production database
 group :production do
  gem 'pg'
 end
+
+# Use the google RECaptcha for better security
+gem "recaptcha", require: "recaptcha/rails"

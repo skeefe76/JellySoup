@@ -3,6 +3,7 @@ class User < ApplicationRecord
   to_param :username
 
   has_many :reviews, dependent: :destroy
+  has_many :stories, dependent: :destroy
 
   def self.authenticate(email, password)
     user = User.find_by(email: email)

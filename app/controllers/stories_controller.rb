@@ -1,9 +1,15 @@
 class StoriesController < ApplicationController
   before_action :require_signin, except: [:index, :show]
-  before_action :require_admin, except: [:index, :show]
+  # before_action :require_admin, except: [:index, :show]
+
 
   def index
-    @stories = Story.all
+    case params[:scope]
+    when 'mystories'
+      @stories = Story.mystories
+    else
+      @stories = Story.all
+    end
   end
 
   def show
@@ -29,6 +35,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
+    @story.user = current_user
     if @story.save
       redirect_to @story, notice: "Story successfully created!"
     else
