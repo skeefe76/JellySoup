@@ -8,7 +8,7 @@ class Story < ApplicationRecord
 
   cattr_accessor :current_user
 
-  scope :mystories, -> { where("user_id == ?", Story.current_user).order(updated_at: :desc) }
+  scope :mystories, -> { where("user_id = ?", Story.current_user).order(updated_at: :desc) }
 
 
   def to_param
