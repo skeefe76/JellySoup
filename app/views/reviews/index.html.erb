@@ -6,9 +6,7 @@
     <li>
       <span class="user">by <%= review.user.name %>: </span>
       <span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
-      <p>
-        &quot;<%= review.comment %>&quot;
-      </p>
+      <p class="ShowFormatting"><%= review.comment %></p>
       <nav>
         <%= link_to "Edit", edit_story_review_path(@story, review) %>
         <%= link_to "Delete", story_review_path(@story, review), method: :delete, data: { confirm: 'Are you sure?' } %>
