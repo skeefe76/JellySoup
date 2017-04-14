@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "signin" => "sessions#new"
   resource :session
   resources :users
+  resources :account_activations, only: [:edit]
   root "welcome#index"
   resources :stories do
     resources :reviews
