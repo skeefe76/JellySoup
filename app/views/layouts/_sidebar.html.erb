@@ -4,17 +4,20 @@
       <li class="stories">
         <%= link_to 'Stories to Review', filtered_stories_path(:assignedreviews), class: 'button' %>
       </li>
-      <% if current_user_admin? %>
-        <li class="stories">
-          <%= link_to 'All Stories', stories_path, class: "button" %>
-        </li>
-      <% end %>
       <li class="stories">
         <%= link_to 'My Stories', filtered_stories_path(:mystories), class: 'button' %>
       </li>
       <li class="create-story">
         <%= link_to 'Add Story', new_story_path, class: "button" %>
       </li>
+      <% if current_user_admin? %>
+        <li class="stories">
+          <%= link_to 'All Stories', stories_path, class: "button" %>
+        </li>
+        <li class="stories">
+          <%= link_to 'Users', users_path, class: "button" %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </aside>
