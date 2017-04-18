@@ -7,6 +7,8 @@ class StoriesController < ApplicationController
     case params[:scope]
     when 'mystories'
       @stories = Story.mystories
+    when 'assignedreviews'
+      @stories = Story.assignedreviews
     else
       @stories = Story.all
     end

@@ -1,6 +1,9 @@
 <aside id="sidebar">
   <nav>
     <ul>
+      <li class="stories">
+        <%= link_to 'Stories to Review', filtered_stories_path(:assignedreviews), class: 'button' %>
+      </li>
       <% if current_user_admin? %>
         <li class="stories">
           <%= link_to 'All Stories', stories_path, class: "button" %>

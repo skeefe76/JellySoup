@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :stories, dependent: :destroy
+  has_many :review_assignments, dependent: :destroy
 
   def self.authenticate(email, password)
     user = User.find_by(email: email)

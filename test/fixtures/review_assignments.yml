@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  review: one
+  story: MyString
+  references: MyString
+  review_complete: MyString
+  boolean: MyString
+
+two:
+  review: two
+  story: MyString
+  references: MyString
+  review_complete: MyString
+  boolean: MyString
